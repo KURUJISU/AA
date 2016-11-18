@@ -23,12 +23,16 @@ private:
   ofImage mainBarImage_;
   ofImage sideBarImage_;
 
+  //ƒtƒHƒ“ƒg
+  string fontFilename_;
+  float fontSize_ = 50;
+
   //
   int count_ = 0;
-  int waitTime_ = 60 * 5;
+  int waitTime_ = 60 * 10;
   int textSwitch_ = -1;
   int moveSwitch_ = 0;
-  float moveValue_ = -5;
+  float moveValue_ = -15;
 
 public:
   void setup();
