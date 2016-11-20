@@ -6,18 +6,21 @@ void ofApp::setup() {
 	ofBackground(255, 255, 255);
 	ofSetFrameRate(60);
 
-	naviBar_.LoadFile();
+	naviBar_.setup();
 }
 
-void ofApp::update() {
-	naviBar_.MoveText();
-}
+void ofApp::update() {}
 
-void ofApp::draw() {
-	naviBar_.DrawBarImage();
-}
+void ofApp::draw() {}
 
-void ofApp::keyPressed(int key) {}
+void ofApp::keyPressed(int key) {
+	if (key == 's') {
+		naviBar_.saveGUI();
+	}
+	if (key == 'l') {
+		naviBar_.loadGUI();
+	}
+}
 
 void ofApp::keyReleased(int key) {}
 

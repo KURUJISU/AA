@@ -1,21 +1,25 @@
 
 #pragma once
+
+#pragma once
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
+#include "ofxGui.h"
 
 
 class NavigationBar{
 private:
 	ofxXmlSettings xml_;
+	ofxPanel gui_;
 
 	//テキスト
 	ofTrueTypeFont font_;
 	string naviText1_;
 	string naviText2_;
 	ofVec2f textPos_ = ofVec2f(100, 70);
-	ofVec2f defaultPos_ = ofVec2f(100, 70);
-	ofVec2f startPos_ = ofVec2f(ofGetWindowWidth(), 70);
-	ofVec2f endPos_ = ofVec2f(-ofGetWindowWidth(), 70);
+	ofxVec2Slider defaultPos_;
+	float startPos_ = ofGetWindowWidth();
+	float endPos_ = -ofGetWindowWidth();
 
 	//画像
 	string mainBarFilename_;
@@ -25,18 +29,34 @@ private:
 
 	//フォント
 	string fontFilename_;
-	float fontSize_ = 50;
+	ofxFloatSlider fontScale_;
+	float fontWidth_;
 
 	//
 	int count_ = 0;
-	int waitTime_ = 60 * 10;
+	ofxIntSlider waitTime_;
 	int textSwitch_ = -1;
 	int moveSwitch_ = 0;
-	float moveValue_ = -15;
+	ofxFloatSlider moveValue_;
 
 public:
-	void LoadFile();
-	void MoveText();
-	void DrawBarImage();
-	void DrawSwitchText();
+	void setup();
+	void loadFile();
+	void moveText(ofEventArgs &args);
+	void drawNavigationBar(ofEventArgs &args);
+	void drawSwitchText();
+	void drawText(string& text);
+	void saveGUI() { gui_.saveToFile("settings.xml"); }
+	void loadGUI() { gui_.loadFromFile("settings.xml"); }
+
+	void setTexPos(ofVec2f pos) { textPos_ = pos; }
+	ofVec2f getTexPos() { return textPos_; }
+	void setDefaultPos(ofVec2f pos) { defaultPos_ = pos; }
+	ofVec2f setDefaultPos() { return defaultPos_; }
+	void setFontSize(float size) { fontScale_ = size; }
+	float getFontSize() { return fontScale_; }
+	void setWaitTime(int time) { waitTime_ = time; }
+	int getWaitTime() { return waitTime_; }
+	void setMoveValue(float value) { moveValue_ = value; }
+	float getMoveValue() { return moveValue_; }
 };
