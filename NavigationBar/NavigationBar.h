@@ -26,6 +26,7 @@ private:
 	string sideBarFilename_;
 	ofImage mainBarImage_;
 	ofImage sideBarImage_;
+  ofxVec2Slider barPos_;
 
 	//ƒtƒHƒ“ƒg
 	string fontFilename_;
@@ -38,6 +39,7 @@ private:
 	int textSwitch_ = -1;
 	int moveSwitch_ = 0;
 	ofxFloatSlider moveValue_;
+  ofxFloatSlider heightValue_;
 
 public:
 	void setup();

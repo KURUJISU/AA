@@ -8,9 +8,11 @@ void NavigationBar::setup() {
 
 	gui_.setup();
 	gui_.add(defaultPos_.setup("DefaultTextPos", ofVec2f(100, 70), minPos_, maxPos_));
-	gui_.add(fontScale_.setup("FontSize", 10, 1, 100));
+	gui_.add(fontScale_.setup("FontSize", 500, 1, 10000));
 	gui_.add(waitTime_.setup("TextWaitTime", 10, 1, 100));
 	gui_.add(moveValue_.setup("TextMoveValue", 15, 1, 100));
+  gui_.add(heightValue_.setup("BarHeight", 8, 0, 100));
+  gui_.add(barPos_.setup("BarPosition", ofVec2f(0, 0), minPos_, maxPos_));
 
 	textPos_ = ofVec2f(defaultPos_);
 
@@ -61,11 +63,11 @@ void NavigationBar::moveText(ofEventArgs &args) {
 }
 
 void NavigationBar::drawNavigationBar(ofEventArgs &args) {
-	mainBarImage_.draw(ofVec2f(0, 0), ofGetWindowWidth(), ofGetWindowHeight() / 8);
+	mainBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth(), ofGetWindowHeight() / float(heightValue_));
 
 	drawSwitchText();
 
-	sideBarImage_.draw(ofVec2f(0, 0), ofGetWindowWidth(), ofGetWindowHeight() / 8);
+	sideBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth(), ofGetWindowHeight() / float(heightValue_));
 
 	gui_.draw();
 }
@@ -89,12 +91,10 @@ void NavigationBar::drawSwitchText() {
 
 void NavigationBar::drawText(string& text) {
 	ofPushMatrix();
-
+  
 	ofTranslate(textPos_);
-	ofScale(fontScale_, fontScale_, 1);
-
-	fontWidth_ = font_.stringWidth(text);
-	font_.drawString(text, -fontWidth_/2, 0);
+	ofScale((ofGetWindowWidth()/fontScale_), (ofGetWindowHeight()/fontScale_), 1);
+	font_.drawString(text, 0, 0);
 
 	ofPopMatrix();
 }
