@@ -1,12 +1,15 @@
-﻿<group>
+<group>
 	<Navi1>Navigation1 Text</Navi1>
 	<Navi2>Navigation2 Text</Navi2>
 	<MainBar>images/mainBar.png</MainBar>
 	<SideBar>images/sideBar.png</SideBar>
 	<Font>msgothic.ttc</Font>
 	<DefaultTextPos>100, 70</DefaultTextPos>
-	<FontSize>10</FontSize>
-	<TextWaitTime>10</TextWaitTime>
+	<FontSize>7200.28</FontSize>
+	<TextWaitTime>4</TextWaitTime>
 	<TextMoveValue>15</TextMoveValue>
 <group/>
+<TextStopPos>100, 70</TextStopPos>
+	<BarPosition>0, 0</BarPosition>
+	<BarSize>1, 8</BarSize>
 </group>

@@ -1,7 +1,7 @@
 
 #pragma once
 #include "ofMain.h"
-#include "../NavigationBar.h"
+#include "NavigationBar\NavigationBar.h"
 
 
 class ofApp : public ofBaseApp {

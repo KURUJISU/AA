@@ -49,8 +49,8 @@
     <ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClCompile>
-    <ClCompile Include="NavigationBar.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\NavigationBar\NavigationBar.cpp">
+      <Filter>src\NavigationBar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +74,9 @@
     </Filter>
     <Filter Include="addons\ofxXmlSettings\libs">
       <UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\NavigationBar">
+      <UniqueIdentifier>{dd52ea61-1e20-47ba-947d-d724bec32362}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -116,8 +119,8 @@
     <ClInclude Include="..\..\addons\ofxXmlSettings\libs\tinyxml.h">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClInclude>
-    <ClInclude Include="NavigationBar.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\NavigationBar\NavigationBar.h">
+      <Filter>src\NavigationBar</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
