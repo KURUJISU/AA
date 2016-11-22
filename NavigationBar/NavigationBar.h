@@ -18,9 +18,7 @@ private:
 	string naviText2_;
 	ofVec2f textPos_ = ofVec2f(100, 70);
 	ofxVec2Slider defaultPos_;
-	float startPos_ = ofGetWindowWidth();
-	float endPos_ = -ofGetWindowWidth();
-
+	
 	//‰æ‘œ
 	string mainBarFilename_;
 	string sideBarFilename_;
@@ -50,6 +48,11 @@ public:
 	void drawText(string& text);
 	void saveGUI() { gui_.saveToFile("settings.xml"); }
 	void loadGUI() { gui_.loadFromFile("settings.xml"); }
+  void setupGUI();
+  void frameOutTextStart();
+  void frameOutTextEnd();
+  void frameInTextStart();
+  void frameInTextEnd();
 
 	void setTexPos(ofVec2f pos) { textPos_ = pos; }
 	ofVec2f getTexPos() { return textPos_; }
