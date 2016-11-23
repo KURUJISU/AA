@@ -11,7 +11,9 @@ void ofApp::setup() {
 
 void ofApp::update() {}
 
-void ofApp::draw() {}
+void ofApp::draw() {
+  naviBar_.drawNavigationBar();
+}
 
 void ofApp::keyPressed(int key) {
 	if (key == 's') {

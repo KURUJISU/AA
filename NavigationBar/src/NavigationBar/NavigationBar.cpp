@@ -4,13 +4,11 @@
 
 void NavigationBar::setup() {
   setupGUI();
+  loadFiles();
 
   textPos_ = ofVec2f(defaultPos_);
 
-  loadFiles();
-
   ofAddListener(ofEvents().update, this, &NavigationBar::moveText);
-  ofAddListener(ofEvents().draw, this, &NavigationBar::drawNavigationBar);
 }
 
 void NavigationBar::setupGUI() {
@@ -19,7 +17,7 @@ void NavigationBar::setupGUI() {
 
   gui_.setup();
   gui_.add(defaultPos_.setup("TextStopPos", ofVec2f(100, 70), minPos_, maxPos_));
-  gui_.add(fontScale_.setup("FontSize", 500, 1, 10000));
+  gui_.add(fontScale_.setup("FontSize", 500, 0.1, 100));
   gui_.add(waitTime_.setup("TextWaitTime", 3, 1, 100));
   gui_.add(moveValue_.setup("TextMoveValue", 15, 1, 100));
   gui_.add(barPos_.setup("BarPosition", ofVec2f(0, 0), minPos_, maxPos_));
@@ -36,8 +34,8 @@ void NavigationBar::loadFiles() {
 
 void NavigationBar::loadXml() {
   xml_.load("settings.xml");
-  naviText1_ = xml_.getValue("group:Navi1", "none");
-  naviText2_ = xml_.getValue("group:Navi2", "none");
+  naviText_[0] = xml_.getValue("group:Navi1", "none");
+  naviText_[1] = xml_.getValue("group:Navi2", "none");
   mainBarFilename_ = xml_.getValue("group:MainBar", "none");
   sideBarFilename_ = xml_.getValue("group:SideBar", "none");
   fontFilename_ = xml_.getValue("group:Font", "none");
@@ -60,7 +58,7 @@ void NavigationBar::moveText(ofEventArgs &args) {
 }
 
 void NavigationBar::frameOutTextStart() {
-  count_ += int(ofGetFrameRate() / 60);
+  count_ += ofGetLastFrameTime();
   if (count_ >= waitTime_ * 60) {
     moveTextPos();
     if (textPos_.x <= -ofGetWindowWidth()) {
@@ -89,10 +87,10 @@ void NavigationBar::frameInTextEnd() {
 }
 
 void NavigationBar::moveTextPos() {
-  textPos_.x -= float(moveValue_)* int(ofGetFrameRate() / 60);
+  textPos_.x -= float(moveValue_)* ofGetLastFrameTime();
 }
 
-void NavigationBar::drawNavigationBar(ofEventArgs &args) {
+void NavigationBar::drawNavigationBar() {
   mainBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth() / ofVec2f(barSize_).x, ofGetWindowHeight() / ofVec2f(barSize_).y);
 
   drawSwitchText();
@@ -108,13 +106,13 @@ void NavigationBar::drawSwitchText() {
   case -1:
     ofSetColor(255, 255, 255);
 
-    drawText(naviText1_);
+    drawText(naviText_[0]);
     break;
 
   case 1:
     ofSetColor(255, 255, 255);
 
-    drawText(naviText2_);
+    drawText(naviText_[1]);
     break;
   }
 }
@@ -123,7 +121,8 @@ void NavigationBar::drawText(string& text) {
   ofPushMatrix();
 
   ofTranslate(textPos_);
-  ofScale((ofGetWindowWidth() / fontScale_), (ofGetWindowHeight() / fontScale_), 1);
+  ofScale(((ofGetWindowWidth() / ofVec2f(barSize_).x) / (fontScale_)),
+    ((ofGetWindowHeight() / ofVec2f(barSize_).y) / fontScale_), 1);
   font_.drawString(text, 0, 0);
 
   ofPopMatrix();

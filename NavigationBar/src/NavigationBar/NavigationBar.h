@@ -1,7 +1,7 @@
 
 #pragma once
 
-#pragma once
+
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
 #include "ofxGui.h"
@@ -14,9 +14,8 @@ private:
 
   //テキスト
   ofTrueTypeFont font_;
-  string naviText1_;
-  string naviText2_;
-  ofVec2f textPos_ = ofVec2f(100, 70);
+  string naviText_[2];
+  ofVec2f textPos_;
   ofxVec2Slider defaultPos_;
 
   //画像
@@ -38,8 +37,6 @@ private:
   int moveSwitch_ = 0;
   ofxFloatSlider moveValue_;
 
-public:
-  void setup();
   void loadFiles();
   void loadXml();
   void loadFont();
@@ -49,12 +46,15 @@ public:
   void frameInTextStart();
   void frameInTextEnd();
   void moveTextPos();
-  void drawNavigationBar(ofEventArgs &args);
   void drawSwitchText();
   void drawText(string& text);
+
+public:
+  void setup();
+  void drawNavigationBar();
+  void setupGUI();
   void saveGUI() { gui_.saveToFile("settings.xml"); }
   void loadGUI() { gui_.loadFromFile("settings.xml"); }
-  void setupGUI();
 
   void setTexPos(ofVec2f pos) { textPos_ = pos; }
   ofVec2f getTexPos() { return textPos_; }
