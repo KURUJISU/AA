@@ -3,7 +3,7 @@
 
 
 void ofApp::setup() {
-	ofBackground(255, 255, 255);
+	//ofBackground(255, 255, 255);
 	ofSetFrameRate(60);
 
 	naviBar_.setup();

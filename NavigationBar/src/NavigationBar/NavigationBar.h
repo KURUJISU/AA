@@ -29,6 +29,7 @@ private:
   //ƒtƒHƒ“ƒg
   string fontFilename_;
   ofxFloatSlider fontScale_;
+  float fontSize_;
 
   //
   int count_ = 0;
@@ -60,8 +61,8 @@ public:
   ofVec2f getTexPos() { return textPos_; }
   void setDefaultPos(ofVec2f pos) { defaultPos_ = pos; }
   ofVec2f setDefaultPos() { return defaultPos_; }
-  void setFontSize(float size) { fontScale_ = size; }
-  float getFontSize() { return fontScale_; }
+  void setFontSize(float size) { fontSize_ = size; }
+  float getFontSize() { return fontSize_; }
   void setWaitTime(int time) { waitTime_ = time; }
   int getWaitTime() { return waitTime_; }
   void setMoveValue(float value) { moveValue_ = value; }
