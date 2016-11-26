@@ -34,8 +34,10 @@ void NavigationBar::loadFiles() {
 
 void NavigationBar::loadXml() {
   if (xml_.load("settings.xml")) {
-    naviText_[0] = xml_.getValue("group:Navi1", "none");
-    naviText_[1] = xml_.getValue("group:Navi2", "none");
+    int textValue_ = xml_.getNumTags("group:Navi");
+    for (int i = 0; i < textValue_; i++) {
+      naviText_[i] = xml_.getValue("group:Navi", "none", i);
+    }
     mainBarFilename_ = xml_.getValue("group:MainBar", "none");
     sideBarFilename_ = xml_.getValue("group:SideBar", "none");
     fontSize_ = xml_.getValue("group:FontSize", 0);
@@ -60,7 +62,7 @@ void NavigationBar::moveText(ofEventArgs &args) {
 }
 
 void NavigationBar::frameOutTextStart() {
-  count_ += ofGetLastFrameTime()*100;
+  count_ += ofGetLastFrameTime() * 100;
   if (count_ >= waitTime_ * 60) {
     moveTextPos();
     if (textPos_.x <= -ofGetWindowWidth()) {
