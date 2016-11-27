@@ -34,14 +34,16 @@ void NavigationBar::loadFiles() {
 
 void NavigationBar::loadXml() {
   if (xml_.load("settings.xml")) {
-    int textValue_ = xml_.getNumTags("group:Navi");
+    xml_.pushTag("group");
+    int textValue_ = xml_.getNumTags("Navi");
     for (int i = 0; i < textValue_; i++) {
-      naviText_[i] = xml_.getValue("group:Navi", "none", i);
+      naviText_[i] = xml_.getValue("Navi", "none", i);
     }
-    mainBarFilename_ = xml_.getValue("group:MainBar", "none");
-    sideBarFilename_ = xml_.getValue("group:SideBar", "none");
-    fontSize_ = xml_.getValue("group:FontSize", 0);
-    fontFilename_ = xml_.getValue("group:Font", "none");
+    mainBarFilename_ = xml_.getValue("MainBar", "none");
+    sideBarFilename_ = xml_.getValue("SideBar", "none");
+    fontSize_ = xml_.getValue("FontSize", 0);
+    fontFilename_ = xml_.getValue("Font", "none");
+    xml_.popTag();
   }
 }
 
