@@ -6,37 +6,21 @@ void ofApp::setup() {
 	//ofBackground(255, 255, 255);
 	ofSetFrameRate(60);
 
-<<<<<<< HEAD
 	gui_.setup();
 
-=======
->>>>>>> master
 	naviBar_.setup();
 }
 
 void ofApp::update() {}
 
 void ofApp::draw() {
-<<<<<<< HEAD
 	gui_.begin();
   naviBar_.draw();
+	naviBar_.drawGUI();
 	gui_.end();
 }
 
 void ofApp::keyPressed(int key) {}
-=======
-  naviBar_.drawNavigationBar();
-}
-
-void ofApp::keyPressed(int key) {
-	if (key == 's') {
-		naviBar_.saveGUI();
-	}
-	if (key == 'l') {
-		naviBar_.loadGUI();
-	}
-}
->>>>>>> master
 
 void ofApp::keyReleased(int key) {}
 

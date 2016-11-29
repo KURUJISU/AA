@@ -7,12 +7,6 @@
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
-<<<<<<< HEAD
-=======
-		<ClCompile Include="src\gui.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
->>>>>>> master
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
@@ -22,7 +16,6 @@
 		<ClCompile Include="src\ofApp.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
-<<<<<<< HEAD
 		<ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp">
 			<Filter>addons\ofxImGui\src</Filter>
 		</ClCompile>
@@ -49,31 +42,6 @@
 		</ClCompile>
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp">
 			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-=======
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxBaseGui.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxButton.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxLabel.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxPanel.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxSlider.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\addons\ofxGui\src\ofxToggle.cpp">
-			<Filter>addons\ofxGui\src</Filter>
->>>>>>> master
 		</ClCompile>
 		<ClCompile Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
 			<Filter>addons\ofxXmlSettings\src</Filter>
@@ -98,7 +66,6 @@
 		<Filter Include="addons">
 			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
 		</Filter>
-<<<<<<< HEAD
 		<Filter Include="addons\ofxImGui">
 			<UniqueIdentifier>{0CD6A942-69FF-3BAA-3AF1-ADD1}</UniqueIdentifier>
 		</Filter>
@@ -113,13 +80,6 @@
 		</Filter>
 		<Filter Include="addons\ofxImGui\libs\imgui\src">
 			<UniqueIdentifier>{5962BF19-1468-EB82-01C0-2E72}</UniqueIdentifier>
-=======
-		<Filter Include="addons\ofxGui">
-			<UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxGui\src">
-			<UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
->>>>>>> master
 		</Filter>
 		<Filter Include="addons\ofxXmlSettings">
 			<UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
@@ -135,19 +95,12 @@
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
-<<<<<<< HEAD
-=======
-		<ClInclude Include="src\gui.h">
-			<Filter>src</Filter>
-		</ClInclude>
->>>>>>> master
 		<ClInclude Include="src\NavigationBar\NavigationBar.h">
 			<Filter>src\NavigationBar</Filter>
 		</ClInclude>
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
-<<<<<<< HEAD
 		<ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h">
 			<Filter>addons\ofxImGui\src</Filter>
 		</ClInclude>
@@ -189,34 +142,6 @@
 		</ClInclude>
 		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h">
 			<Filter>addons\ofxImGui\libs\imgui\src</Filter>
-=======
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxButton.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxGui.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxGuiGroup.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxLabel.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxPanel.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxSlider.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxSliderGroup.h">
-			<Filter>addons\ofxGui\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\addons\ofxGui\src\ofxToggle.h">
-			<Filter>addons\ofxGui\src</Filter>
->>>>>>> master
 		</ClInclude>
 		<ClInclude Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
 			<Filter>addons\ofxXmlSettings\src</Filter>

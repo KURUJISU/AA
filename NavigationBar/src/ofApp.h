@@ -1,10 +1,7 @@
 
 #pragma once
 #include "ofMain.h"
-<<<<<<< HEAD
 #include "ofxImGui.h"
-=======
->>>>>>> master
 #include "NavigationBar\NavigationBar.h"
 
 
