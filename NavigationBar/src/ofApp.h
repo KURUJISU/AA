@@ -1,11 +1,13 @@
 
 #pragma once
 #include "ofMain.h"
-#include "../NavigationBar.h"
+#include "ofxImGui.h"
+#include "NavigationBar\NavigationBar.h"
 
 
 class ofApp : public ofBaseApp {
 private:
+	ofxImGui::Gui gui_;
 	NavigationBar naviBar_;
 
 public:
@@ -24,5 +26,4 @@ public:
   void windowResized(int w, int h);
   void dragEvent(ofDragInfo dragInfo);
   void gotMessage(ofMessage msg);
-
 };

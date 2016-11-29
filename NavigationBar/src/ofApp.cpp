@@ -3,24 +3,23 @@
 
 
 void ofApp::setup() {
-	ofBackground(255, 255, 255);
+	//ofBackground(255, 255, 255);
 	ofSetFrameRate(60);
+
+	gui_.setup();
 
 	naviBar_.setup();
 }
 
 void ofApp::update() {}
 
-void ofApp::draw() {}
-
-void ofApp::keyPressed(int key) {
-	if (key == 's') {
-		naviBar_.saveGUI();
-	}
-	if (key == 'l') {
-		naviBar_.loadGUI();
-	}
+void ofApp::draw() {
+	gui_.begin();
+  naviBar_.drawNavigationBar();
+	gui_.end();
 }
+
+void ofApp::keyPressed(int key) {}
 
 void ofApp::keyReleased(int key) {}
 
