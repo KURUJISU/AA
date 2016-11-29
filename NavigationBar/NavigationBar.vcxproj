@@ -95,7 +95,11 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
+<<<<<<< HEAD
 			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+=======
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+>>>>>>> master
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +118,11 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
+<<<<<<< HEAD
 			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+=======
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+>>>>>>> master
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +141,11 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
+<<<<<<< HEAD
 			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+=======
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+>>>>>>> master
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +167,11 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
+<<<<<<< HEAD
 			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+=======
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+>>>>>>> master
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -173,6 +189,7 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
+<<<<<<< HEAD
 		<ClCompile Include="src\NavigationBar\NavigationBar.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp" />
@@ -183,6 +200,18 @@
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
+=======
+		<ClCompile Include="src\gui.cpp" />
+		<ClCompile Include="src\NavigationBar\NavigationBar.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxBaseGui.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxButton.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxGuiGroup.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxLabel.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxPanel.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxSlider.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxSliderGroup.cpp" />
+		<ClCompile Include="..\..\addons\ofxGui\src\ofxToggle.cpp" />
+>>>>>>> master
 		<ClCompile Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp" />
 		<ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxml.cpp" />
 		<ClCompile Include="..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp" />
@@ -190,6 +219,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
+<<<<<<< HEAD
 		<ClInclude Include="src\NavigationBar\NavigationBar.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h" />
@@ -205,6 +235,19 @@
 		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_rect_pack.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_textedit.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\libs\imgui\src\stb_truetype.h" />
+=======
+		<ClInclude Include="src\gui.h" />
+		<ClInclude Include="src\NavigationBar\NavigationBar.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxBaseGui.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxButton.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxGui.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxGuiGroup.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxLabel.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxPanel.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxSlider.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxSliderGroup.h" />
+		<ClInclude Include="..\..\addons\ofxGui\src\ofxToggle.h" />
+>>>>>>> master
 		<ClInclude Include="..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h" />
 		<ClInclude Include="..\..\addons\ofxXmlSettings\libs\tinyxml.h" />
 	</ItemGroup>
