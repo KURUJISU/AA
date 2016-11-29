@@ -8,34 +8,9 @@ void NavigationBar::setup() {
 	barSize_ = ofVec2f(1, 8);
 	textPos_ = ofVec2f(defaultPos_);
 
-	setupGUI();
 	loadFiles();
 
 	ofAddListener(ofEvents().update, this, &NavigationBar::moveText);
-}
-
-void NavigationBar::setupGUI() {
-
-	ImGui::Begin("NavigationBar");
-	ImGui::DragFloat2("TextStopPos", defaultPos_.getPtr());
-	ImGui::DragFloat("FontScale", &fontScale_, 1.0f, 500, 1000);
-	ImGui::DragInt("TextWaitTime", &waitTime_, 1.0f, 3, 100);
-	ImGui::DragFloat("TextMoveValue", &moveValue_, 1.0f, 15, 100);
-	ImGui::DragFloat2("BarPosition", barPos_.getPtr());
-	ImGui::DragFloat2("BarSize", barSize_.getPtr());
-	if (ImGui::BeginMenuBar()) {
-		if (ImGui::BeginMenu("File")) {
-			if (ImGui::MenuItem("Save")) {
-
-			}
-			if (ImGui::MenuItem("Load")) {
-
-			}
-		}
-		ImGui::EndMenuBar();
-	}
-	ImGui::End();
-
 }
 
 void NavigationBar::loadFiles() {
@@ -110,12 +85,36 @@ void NavigationBar::moveTextPos() {
 	textPos_.x -= float(moveValue_)* (ofGetLastFrameTime() * 100);
 }
 
-void NavigationBar::drawNavigationBar() {
+void NavigationBar::draw() {
+	drawGUI();
+
 	mainBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth() / ofVec2f(barSize_).x, ofGetWindowHeight() / ofVec2f(barSize_).y);
 
 	drawSwitchText();
 
 	sideBarImage_.draw(ofVec2f(barPos_), ofGetWindowWidth() / ofVec2f(barSize_).x, ofGetWindowHeight() / ofVec2f(barSize_).y);
+}
+
+void NavigationBar::drawGUI() {
+	ImGui::Begin("NavigationBar");
+	ImGui::DragFloat2("TextStopPos", defaultPos_.getPtr());
+	ImGui::DragFloat("FontScale", &fontScale_, 1.0f, 500, 1000);
+	ImGui::DragInt("TextWaitTime", &waitTime_, 1.0f, 3, 100);
+	ImGui::DragFloat("TextMoveValue", &moveValue_, 1.0f, 15, 100);
+	ImGui::DragFloat2("BarPosition", barPos_.getPtr());
+	ImGui::DragFloat2("BarSize", barSize_.getPtr());
+	if (ImGui::BeginMenuBar()) {
+		if (ImGui::BeginMenu("File")) {
+			if (ImGui::MenuItem("Save")) {
+
+			}
+			if (ImGui::MenuItem("Load")) {
+
+			}
+		}
+		ImGui::EndMenuBar();
+	}
+	ImGui::End();
 }
 
 void NavigationBar::drawSwitchText() {

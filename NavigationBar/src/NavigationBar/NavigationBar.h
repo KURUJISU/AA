@@ -51,8 +51,8 @@ private:
 
 public:
   void setup();
-  void drawNavigationBar();
-  void setupGUI();
+  void draw();
+  void drawGUI();
 
   void setTexPos(ofVec2f& pos) { textPos_ = pos; }
   ofVec2f getTexPos() { return textPos_; }
