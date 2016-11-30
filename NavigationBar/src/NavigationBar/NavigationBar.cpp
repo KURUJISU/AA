@@ -7,6 +7,9 @@ void NavigationBar::setup() {
 	barPos_ = ofVec2f(0, 0);
 	barSize_ = ofVec2f(1, 8);
 	textPos_ = ofVec2f(defaultPos_);
+	count_ = 0;
+	textSwitch_ = 0;
+	moveSwitch_ = 0;
 
 	loadFiles();
 
@@ -26,18 +29,27 @@ void NavigationBar::loadXml() {
 		xml_.pushTag("group");
 		int textValue_ = xml_.getNumTags("Navi");
 		for (int i = 0; i < textValue_; i++) {
-			naviText_[i] = xml_.getValue("Navi", "none", i);
+			textList_.push_back(xml_.getValue("Navi", "none", i));
 		}
+		defaultPos_.x = xml_.getValue("TextStopPosX", 0);
+		defaultPos_.y = xml_.getValue("TextStopPosY", 0);
+		barPos_.x = xml_.getValue("BarPositionX", 0);
+		barPos_.y = xml_.getValue("BarPositionY", 0);
+		barSize_.x = xml_.getValue("BarSizeX", 0);
+		barSize_.y = xml_.getValue("BarSizeY", 0);
 		mainBarFilename_ = xml_.getValue("MainBar", "none");
 		sideBarFilename_ = xml_.getValue("SideBar", "none");
 		fontSize_ = xml_.getValue("FontSize", 0);
+		fontScale_ = xml_.getValue("FontScale", 0);
 		fontFilename_ = xml_.getValue("Font", "none");
+		waitTime_ = xml_.getValue("TextWaitTime", 0);
+		moveValue_ = xml_.getValue("TextMoveValue", 0);
 		xml_.popTag();
 	}
 }
 
 void NavigationBar::loadFont() {
-	font_.loadFont(fontFilename_, fontSize_);
+	font_.load(fontFilename_, fontSize_);
 }
 
 void NavigationBar::moveText(ofEventArgs &args) {
@@ -66,7 +78,8 @@ void NavigationBar::frameOutTextEnd() {
 	textPos_.x = ofGetWindowWidth();
 	count_ = 0;
 	moveSwitch_ = 1;
-	textSwitch_ = textSwitch_*-1;
+	textSwitch_ += 1;
+	if (textSwitch_ >= textList_.size()) { textSwitch_ = 0; }
 }
 
 void NavigationBar::frameInTextStart() {
@@ -95,39 +108,41 @@ void NavigationBar::draw() {
 
 void NavigationBar::drawGUI() {
 	ImGui::Begin("NavigationBar");
+	if (ImGui::Button("Save")) {
+		saveXml();
+	}
+	if (ImGui::Button("Load")) {
+		loadXml();
+	}
 	ImGui::DragFloat2("TextStopPos", defaultPos_.getPtr());
 	ImGui::DragFloat("FontScale", &fontScale_, 1.0f, 500, 1000);
-	ImGui::DragInt("TextWaitTime", &waitTime_, 1.0f, 3, 100);
+	ImGui::DragInt("TextWaitTime", &waitTime_, 1.0f, 1, 100);
 	ImGui::DragFloat("TextMoveValue", &moveValue_, 1.0f, 15, 100);
 	ImGui::DragFloat2("BarPosition", barPos_.getPtr());
 	ImGui::DragFloat2("BarSize", barSize_.getPtr());
-	if (ImGui::BeginMenuBar()) {
-		if (ImGui::BeginMenu("File")) {
-			if (ImGui::MenuItem("Save")) {
-
-			}
-			if (ImGui::MenuItem("Load")) {
-
-			}
-		}
-		ImGui::EndMenuBar();
-	}
 	ImGui::End();
 }
 
+void NavigationBar::saveXml() {
+	xml_.pushTag("group");
+	xml_.setValue("TextStopPosX", defaultPos_.x);
+	xml_.setValue("TextStopPosY", defaultPos_.y);
+	xml_.setValue("BarPositionX", barPos_.x);
+	xml_.setValue("BarPositionY", barPos_.y);
+	xml_.setValue("BarSizeX", barSize_.x);
+	xml_.setValue("BarSizeY", barSize_.y);
+	xml_.setValue("FontScale", fontScale_);
+	xml_.setValue("TextWaitTime", waitTime_);
+	xml_.setValue("TextMoveValue", moveValue_);
+	xml_.popTag();
+	xml_.saveFile("settings.xml");
+}
+
 void NavigationBar::drawSwitchText() {
-	switch (textSwitch_)
-	{
-	case -1:
+	for (textSwitch_; textSwitch_ < textList_.size();) {
 		ofSetColor(255, 255, 255);
 
-		drawText(naviText_[0]);
-		break;
-
-	case 1:
-		ofSetColor(255, 255, 255);
-
-		drawText(naviText_[1]);
+		drawText(textList_[textSwitch_]);
 		break;
 	}
 }

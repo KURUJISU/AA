@@ -13,7 +13,7 @@ private:
 
   //テキスト
   ofTrueTypeFont font_;
-  string naviText_[2];
+	vector<string> textList_;
   ofVec2f textPos_;
   ofVec2f defaultPos_;
 
@@ -31,13 +31,14 @@ private:
   float fontSize_;
 
   //
-  int count_ = 0;
+  int count_;
   int waitTime_;
-  int textSwitch_ = -1;
-  int moveSwitch_ = 0;
+  int textSwitch_;
+  int moveSwitch_;
   float moveValue_;
 
   void loadFiles();
+	void saveXml();
   void loadXml();
   void loadFont();
   void moveText(ofEventArgs &args);

@@ -1,16 +1,17 @@
 <group>
-  <Navi>Navigation1 Text</Navi>
-  <Navi>Navigation2 Text</Navi>
-  <MainBar>images/MainBar.png</MainBar>
-  <SideBar>images/SideBar.png</SideBar>
-  <Font>msgothic.ttc</Font>
-  <DefaultTextPos>100, 70</DefaultTextPos>
-  <FontSize>30</FontSize>
-  <FontScale>500</FontScale>
-  <TextWaitTime>3</TextWaitTime>
-  <TextMoveValue>15</TextMoveValue>
-  <group/>
-  <TextStopPos>450, 20</TextStopPos>
-  <BarPosition>0, 0</BarPosition>
-  <BarSize>1, 8</BarSize>
+    <Navi>Navigation1 Text</Navi>
+    <Navi>Navigation2 Text</Navi>
+    <MainBar>images/MainBar.png</MainBar>
+    <SideBar>images/SideBar.png</SideBar>
+    <Font>msgothic.ttc</Font>
+    <FontSize>30</FontSize>
+    <FontScale>500.000000000</FontScale>
+    <TextWaitTime>1</TextWaitTime>
+    <TextMoveValue>15.000000000</TextMoveValue>
+    <TextStopPosX>450.000000000</TextStopPosX>
+    <TextStopPosY>20.000000000</TextStopPosY>
+    <BarPositionX>0.000000000</BarPositionX>
+    <BarPositionY>0.000000000</BarPositionY>
+    <BarSizeX>1.000000000</BarSizeX>
+    <BarSizeY>8.000000000</BarSizeY>
 </group>
