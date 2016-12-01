@@ -25,27 +25,27 @@ void NavigationBar::loadFiles() {
 }
 
 void NavigationBar::loadXml() {
-	if (xml_.load("settings.xml")) {
-		xml_.pushTag("group");
-		int textValue_ = xml_.getNumTags("Navi");
-		for (int i = 0; i < textValue_; i++) {
-			textList_.push_back(xml_.getValue("Navi", "none", i));
-		}
-		defaultPos_.x = xml_.getValue("TextStopPosX", 0);
-		defaultPos_.y = xml_.getValue("TextStopPosY", 0);
-		barPos_.x = xml_.getValue("BarPositionX", 0);
-		barPos_.y = xml_.getValue("BarPositionY", 0);
-		barSize_.x = xml_.getValue("BarSizeX", 0);
-		barSize_.y = xml_.getValue("BarSizeY", 0);
-		mainBarFilename_ = xml_.getValue("MainBar", "none");
-		sideBarFilename_ = xml_.getValue("SideBar", "none");
-		fontSize_ = xml_.getValue("FontSize", 0);
-		fontScale_ = xml_.getValue("FontScale", 0);
-		fontFilename_ = xml_.getValue("Font", "none");
-		waitTime_ = xml_.getValue("TextWaitTime", 0);
-		moveValue_ = xml_.getValue("TextMoveValue", 0);
-		xml_.popTag();
+	xml_.load("settings.xml");
+	xml_.pushTag("group");
+	int textValue_ = xml_.getNumTags("Navi");
+	for (int i = 0; i < textValue_; i++) {
+		textList_.push_back(xml_.getValue("Navi", "none", i));
 	}
+	defaultPos_.x = xml_.getValue("TextStopPosX", 0);
+	defaultPos_.y = xml_.getValue("TextStopPosY", 0);
+	barPos_.x = xml_.getValue("BarPositionX", 0);
+	barPos_.y = xml_.getValue("BarPositionY", 0);
+	barSize_.x = xml_.getValue("BarSizeX", 0);
+	barSize_.y = xml_.getValue("BarSizeY", 0);
+	mainBarFilename_ = xml_.getValue("MainBar", "none");
+	sideBarFilename_ = xml_.getValue("SideBar", "none");
+	fontSize_ = xml_.getValue("FontSize", 0);
+	fontScale_ = xml_.getValue("FontScale", 0);
+	fontFilename_ = xml_.getValue("Font", "none");
+	waitTime_ = xml_.getValue("TextWaitTime", 0);
+	moveValue_ = xml_.getValue("TextMoveValue", 0);
+	xml_.popTag();
+
 }
 
 void NavigationBar::loadFont() {
