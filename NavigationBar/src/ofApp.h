@@ -2,12 +2,12 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxImGui.h"
-#include "NavigationBar\NavigationBar.h"
+#include "navigationBar\NavigationBar.h"
 
 
 class ofApp : public ofBaseApp {
 private:
-	ofxImGui::Gui gui_;
+	ofxImGui gui_;
 	NavigationBar naviBar_;
 
 public:

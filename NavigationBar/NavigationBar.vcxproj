@@ -95,7 +95,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\navigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +114,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\navigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +133,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\navigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +155,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\NavigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\navigationBar;..\..\addons\ofxImGui\libs;..\..\addons\ofxImGui\libs\imgui;..\..\addons\ofxImGui\libs\imgui\src;..\..\addons\ofxImGui\src;..\..\addons\ofxXmlSettings\libs;..\..\addons\ofxXmlSettings\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -173,13 +173,12 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
-		<ClCompile Include="src\NavigationBar\NavigationBar.cpp" />
+		<ClCompile Include="src\navigationBar\NavigationBar.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\BaseEngine.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\BaseTheme.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\EngineGLFW.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\src\EngineOpenGLES.cpp" />
-		<ClCompile Include="..\..\addons\ofxImGui\src\Gui.cpp" />
-		<ClCompile Include="..\..\addons\ofxImGui\src\Helpers.cpp" />
+		<ClCompile Include="..\..\addons\ofxImGui\src\ofxImGui.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
 		<ClCompile Include="..\..\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
@@ -190,13 +189,11 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
-		<ClInclude Include="src\NavigationBar\NavigationBar.h" />
+		<ClInclude Include="src\navigationBar\NavigationBar.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\BaseEngine.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\BaseTheme.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\EngineGLFW.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\EngineOpenGLES.h" />
-		<ClInclude Include="..\..\addons\ofxImGui\src\Gui.h" />
-		<ClInclude Include="..\..\addons\ofxImGui\src\Helpers.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\imconfig.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\ofxImGui.h" />
 		<ClInclude Include="..\..\addons\ofxImGui\src\ThemeTest.h" />
