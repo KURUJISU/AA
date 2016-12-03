@@ -16,7 +16,7 @@ void ofApp::update() {}
 void ofApp::draw() {
 	gui_.begin();
   naviBar_.draw();
-	naviBar_.drawGUI();
+	naviBar_.drawGui();
 	gui_.end();
 }
 
