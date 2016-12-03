@@ -2,7 +2,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxImGui.h"
-#include "navigationBar\NavigationBar.h"
+#include "navigationBar\navigationBar.h"
 
 
 class ofApp : public ofBaseApp {
